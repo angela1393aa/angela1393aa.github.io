@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>稀飯板</title>
+    <!-- <link rel="stylesheet" href="reset.css" /> -->
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .title {
+        display: inline-block;
+        border-bottom: 2px solid black;
+        margin: 20px;
+      }
+      .text {
+        width: 960px;
+        margin: 10px auto;
+      }
+      /* ---header--- */
+      header {
+        display: flex;
+        background-color: black;
+      }
+      header nav {
+        width: 100%;
+        text-align: right;
+      }
+      header nav a {
+        padding: 10px;
+        line-height: 52px;
+        text-decoration: none;
+        color: white;
+        transition: all 0.3s 0s ease;
+      }
+      header nav a:hover {
+        background-color: orange;
+        padding: 0 20px;
+      }
+      header .logo {
+        padding: 6px;
+      }
+      /* ---banner--- */
+      .banner img {
+        width: 100%;
+      }
+      /* ---path--- */
+      .path {
+        display: flex;
+        width: 960px;
+        margin: auto;
+        padding: 10px;
+      }
+      .path li {
+        list-style: none;
+        padding: 0 10px;
+        position: relative;
+      }
+      .path li a {
+        text-decoration: none;
+        color: #aaa;
+        font-size: 14px;
+      }
+      .path li + li::before {
+        content: "/";
+        color: #aaa;
+        position: absolute;
+        left: 0;
+      }
+      /* ---about--- */
+      .about {
+        text-align: center;
+        width: 960px;
+        margin: auto;
+      }
+      .about .wrap {
+        display: flex;
+        padding: 20px;
+      }
+      .about h2 {
+        margin: 10px;
+      }
+      .about .wrap .item {
+        transition: 0.5s;
+      }
+      .about .wrap .item:hover {
+        color: #aaa;
+      }
+      .about .wrap .item img {
+        border-radius: 50%;
+      }
+      /* ---product--- */
+      .product {
+        text-align: center;
+        background-color: #aaa;
+      }
+
+      .product .wrap {
+        display: flex;
+        width: 960px;
+        margin: 20px auto;
+      }
+      .product .wrap .item {
+        width: 50%;
+      }
+      .product .wrap .item img {
+        width: 100%;
+      }
+      /* ---service--- */
+      .service {
+        text-align: center;
+      }
+      .service .wrap {
+        display: flex;
+        width: 960px;
+        margin: auto;
+      }
+      .service .wrap .item {
+        margin: 10px;
+      }
+      .service .wrap .item img {
+        width: 100%;
+      }
+      /* ---footer--- */
+      footer {
+        text-align: center;
+        background-color: black;
+        color: dimgray;
+        padding: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="#">
+        <img class="logo" src="https://picsum.photos/id/15/80/40" />
+      </a>
+      <nav>
+        <a href="#">關於我們</a>
+        <a href="#">產品介紹</a>
+        <a href="#">相關服務</a>
+        <a href="#">聯絡我們</a>
+        <a href="#">網站地圖</a>
+      </nav>
+    </header>
+    <!-- banner滿版內容區 -->
+    <div class="banner">
+      <img src="https://picsum.photos/id/14/1200/300" alt="" />
+    </div>
+    <!-- 麵包穴 -->
+    <div class="path">
+      <li><a href="#">首頁</a></li>
+      <li><a href="#">最新消息</a></li>
+      <li><a href="#"></a></li>
+    </div>
+    <main>
+      <!-- about -->
+      <section class="about">
+        <h2 class="title">about</h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam
+          sunt cum et quisquam reprehenderit! Magnam quos reprehenderit
+          laboriosam ducimus quaerat qui? Amet corrupti mollitia nihil id
+          eligendi asperiores illo. Autem!
+        </p>
+        <div class="wrap">
+          <div class="item">
+            <img src="https://picsum.photos/id/10/50/50" alt="" />
+            <h3>title</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Laboriosam sunt cum et quisquam reprehenderit! Magnam quos
+              reprehenderit laboriosam ducimus quaerat qui? Amet corrupti
+              mollitia nihil id eligendi asperiores illo. Autem!
+            </p>
+          </div>
+          <div class="item">
+            <img src="https://picsum.photos/id/10/50/50" alt="" />
+            <h3>title</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Laboriosam sunt cum et quisquam reprehenderit! Magnam quos
+              reprehenderit laboriosam ducimus quaerat qui? Amet corrupti
+              mollitia nihil id eligendi asperiores illo. Autem!
+            </p>
+          </div>
+          <div class="item">
+            <img src="https://picsum.photos/id/10/50/50" alt="" />
+            <h3>title</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Laboriosam sunt cum et quisquam reprehenderit! Magnam quos
+              reprehenderit laboriosam ducimus quaerat qui? Amet corrupti
+              mollitia nihil id eligendi asperiores illo. Autem!
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- product -->
+
+      <section class="product">
+        <h2 class="title">product</h2>
+        <p class="text">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam
+          sunt cum et quisquam reprehenderit! Magnam quos reprehenderit
+          laboriosam ducimus quaerat qui? Amet corrupti mollitia nihil id
+          eligendi asperiores illo. Autem!
+        </p>
+        <div class="wrap">
+          <div class="item">
+            <img src="https://picsum.photos/id/10/600/400" alt="" />
+          </div>
+          <div class="item">
+            <h3>title</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Laboriosam sunt cum et quisquam reprehenderit! Magnam quos
+              reprehenderit laboriosam ducimus quaerat qui? Amet corrupti
+              mollitia nihil id eligendi asperiores illo. Autem!
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- service -->
+      <section class="service">
+        <h2 class="title">service</h2>
+        <p class="text">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam
+          sunt cum et quisquam reprehenderit! Magnam quos reprehenderit
+          laboriosam ducimus quaerat qui? Amet corrupti mollitia nihil id
+          eligendi asperiores illo. Autem!
+        </p>
+        <div class="wrap">
+          <div class="item">
+            <img src="https://picsum.photos/id/10/600/400" alt="" />
+            <h3>title</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Laboriosam sunt cum et quisquam reprehenderit! Magnam quos
+              reprehenderit laboriosam ducimus quaerat qui? Amet corrupti
+              mollitia nihil id eligendi asperiores illo. Autem!
+            </p>
+          </div>
+          <div class="item">
+            <img src="https://picsum.photos/id/10/600/400" alt="" />
+            <h3>title</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Laboriosam sunt cum et quisquam reprehenderit! Magnam quos
+              reprehenderit laboriosam ducimus quaerat qui? Amet corrupti
+              mollitia nihil id eligendi asperiores illo. Autem!
+            </p>
+          </div>
+          <div class="item">
+            <img src="https://picsum.photos/id/10/600/400" alt="" />
+            <h3>title</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Laboriosam sunt cum et quisquam reprehenderit! Magnam quos
+              reprehenderit laboriosam ducimus quaerat qui? Amet corrupti
+              mollitia nihil id eligendi asperiores illo. Autem!
+            </p>
+          </div>
+          <div class="item">
+            <img src="https://picsum.photos/id/10/600/400" alt="" />
+            <h3>title</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Laboriosam sunt cum et quisquam reprehenderit! Magnam quos
+              reprehenderit laboriosam ducimus quaerat qui? Amet corrupti
+              mollitia nihil id eligendi asperiores illo. Autem!
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>&copy;copyright 2021 by angela</footer>
+  </body>
+</html>

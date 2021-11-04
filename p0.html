@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>問與答</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      h2 {
+        cursor: pointer;
+      }
+      /* 輪播圖 */
+      .wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        /* 讓整個容器在中間.整個視口高度 */
+      }
+      .slides {
+        position: relative;
+        width: 600px;
+        height: 400px;
+        list-style: none;
+        background-color: #eee;
+        /* 動圖大小 */
+        overflow: hidden;
+        /* 超出容器隱藏 */
+      }
+      .slide {
+        width: inherit;
+        height: inherit;
+        /* 繼承父容器大小 */
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* 全部li對齊 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* 讓文字置中 */
+        transition: 0.5s transform ease-in-out;
+        /* 加入動畫 */
+      }
+      .slide:nth-of-type(1) {
+        background-image: url(https://picsum.photos/id/13/600/400);
+        border-radius: 0;
+        margin: 0;
+      }
+      .slide:nth-of-type(2) {
+        background-image: url(https://picsum.photos/id/14/600/400);
+        left: 100%;
+        border-radius: 0;
+        margin: 0;
+      }
+      .slide:nth-of-type(3) {
+        background-image: url(https://picsum.photos/id/12/600/400);
+        left: 200%;
+        border-radius: 0;
+        margin: 0;
+      }
+      .slide:nth-of-type(4) {
+        background-image: url(https://picsum.photos/id/11/600/400);
+        left: 300%;
+        border-radius: 0;
+        margin: 0;
+      }
+      input[type="radio"] {
+        position: relative;
+        z-index: 1;
+        display: none;
+      }
+      .controls-visible {
+        position: absolute;
+        width: 100%;
+        bottom: 12px;
+        text-align: center;
+      }
+      .controls-visible label {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: #fff;
+        border-radius: 50%;
+        margin: 0 3px;
+        border: 2px solid #fff;
+      }
+      .slides
+        input[type="radio"]:nth-of-type(1):checked
+        ~ .controls-visible
+        label:nth-of-type(1) {
+        background-color: #333;
+      }
+      /* 當第一個radio點選時~找到同一層之後的controls-visible label:nth-of-type(1)改變顏色 */
+      .slides
+        input[type="radio"]:nth-of-type(2):checked
+        ~ .controls-visible
+        label:nth-of-type(2) {
+        background-color: #333;
+      }
+      .slides
+        input[type="radio"]:nth-of-type(3):checked
+        ~ .controls-visible
+        label:nth-of-type(3) {
+        background-color: #333;
+      }
+      .slides
+        input[type="radio"]:nth-of-type(4):checked
+        ~ .controls-visible
+        label:nth-of-type(4) {
+        background-color: #333;
+      }
+      .slides input[type="radio"]:nth-of-type(1):checked ~ .slide {
+        transform: translatex(0%);
+      }
+
+      .slides input[type="radio"]:nth-of-type(2):checked ~ .slide {
+        transform: translatex(-100%);
+      }
+
+      .slides input[type="radio"]:nth-of-type(3):checked ~ .slide {
+        transform: translatex(-200%);
+      }
+      .slides input[type="radio"]:nth-of-type(4):checked ~ .slide {
+        transform: translatex(-300%);
+      }
+      /* Left/Right Button Classes Below */
+
+      .navigator {
+        position: absolute;
+        top: 50%;
+        transform: translatey(-50%);
+        width: 100%;
+        z-index: 100;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        display: none;
+      }
+
+      .navigator i {
+        font-size: 32px;
+        color: white;
+      }
+
+      .slides
+        input[type="radio"]:nth-of-type(1):checked
+        ~ .navigator:nth-of-type(1) {
+        display: flex;
+      }
+
+      .slides
+        input[type="radio"]:nth-of-type(2):checked
+        ~ .navigator:nth-of-type(2) {
+        display: flex;
+      }
+
+      .slides
+        input[type="radio"]:nth-of-type(3):checked
+        ~ .navigator:nth-of-type(3) {
+        display: flex;
+      }
+      .slides
+        input[type="radio"]:nth-of-type(4):checked
+        ~ .navigator:nth-of-type(4) {
+        display: flex;
+      }
+      .skill {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>我的技能</h1>
+    <section class="wrap">
+      <ul class="slides">
+        <input type="radio" name="control" id="control-1" checked />
+        <input type="radio" name="control" id="control-2" />
+        <input type="radio" name="control" id="control-3" />
+        <input type="radio" name="control" id="control-4" />
+        <!-- name歸類為同一組checked預設 -->
+        <!--  Left/Right Button  -->
+        <div class="navigator slide-1">
+          <label for="control-4">
+            <i class="fas fa-chevron-left"></i>
+          </label>
+          <label for="control-2">
+            <i class="fas fa-chevron-right"></i>
+          </label>
+        </div>
+
+        <div class="navigator slide-2">
+          <label for="control-1">
+            <i class="fas fa-chevron-left"></i>
+          </label>
+          <label for="control-3">
+            <i class="fas fa-chevron-right"></i>
+          </label>
+        </div>
+
+        <div class="navigator slide-3">
+          <label for="control-2">
+            <i class="fas fa-chevron-left"></i>
+          </label>
+          <label for="control-4">
+            <i class="fas fa-chevron-right"></i>
+          </label>
+        </div>
+        <div class="navigator slide-4">
+          <label for="control-3">
+            <i class="fas fa-chevron-left"></i>
+          </label>
+          <label for="control-1">
+            <i class="fas fa-chevron-right"></i>
+          </label>
+        </div>
+        <li class="slide">
+          <h2>哈喽</h2>
+        </li>
+        <li class="slide">
+          <h2>你好嗎?</h2>
+        </li>
+        <li class="slide">
+          <h2>衷心感謝</h2>
+        </li>
+        <li class="slide">
+          <h2>珍重再見!</h2>
+        </li>
+        <div class="controls-visible">
+          <label for="control-1"></label>
+          <label for="control-2"></label>
+          <label for="control-3"></label>
+          <label for="control-4"></label>
+        </div>
+      </ul>
+    </section>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // 首頁輪播圖
+      var slide = 0;
+      var sliderWidth = 600;
+      var slideCount = 4; //取得陣列長度
+      //timer
+      var autoSlide = setInterval(slideTimer, 3000);
+
+      function slideTimer() {
+        slide = slide >= slideCount - 1 ? 0 : slide + 1;
+        goSlider(slide);
+      }
+      $(".slides").hover(
+        function () {
+          clearInterval(autoSlide);
+        },
+        function () {
+          autoSlide = setInterval(slideTimer, 3000);
+        }
+      );
+    </script>
+  </body>
+</html>

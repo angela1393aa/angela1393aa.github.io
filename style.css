@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  margin-bottom: 20px;
+}
+.title {
+  text-align: center;
+  margin: 30px;
+}
+.title h1 {
+  border-bottom: 4px solid #fa0;
+  display: inline-block;
+  margin: 20px;
+}
+nav {
+  background-color: #000;
+  text-align: right;
+  width: 100%;
+  font-size: 0;
+  /* 去掉空白字元造成的空隙 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+/* 下一層 */
+nav a {
+  color: #fff;
+  text-decoration: none;
+  /* 不要底線 */
+  display: inline-block;
+  padding: 0px 10px;
+  font-size: 16px;
+  /* 去掉空白字元造成的空隙要撐高 */
+  line-height: 52px;
+  /* 拉高置中 */
+  background-color: #000;
+  transition: 0.5s;
+}
+nav a:hover {
+  background-color: #fa0;
+}
+p {
+  color: #666;
+  font-size: 22px;
+  line-height: 1.5;
+}
+.float-ing {
+  float: left;
+  margin: 0px 20px;
+}
+.wrap {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  padding: 20px;
+  /* flex-wrap: wrap; */
+  /* 換行 */
+}
+.item {
+  width: 100%;
+  margin: 10px;
+  border: 1px solid #aaa;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  background-color: white;
+  opacity: 0.8;
+}
+.item img {
+  width: 100%;
+}
+.item .tab {
+  /* item裡面的tab */
+  background-color: #fa0;
+  color: red;
+  padding: 6px 10px;
+  position: absolute;
+  top: -4px;
+  right: -4px;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: auto;
+}
+.container p {
+  line-height: 1.5;
+  margin-bottom: 2em;
+}
+footer {
+  background-color: black;
+  padding: 10px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  color: #fa0;
+}
+/* 漢堡 */
+#menu_control {
+  display: none;
+  position: absolute;
+  /* 讓它消失 */
+  /* z-index: 1; */
+  /* 出現 */
+}
+header {
+  position: relative;
+}
+.menu_btn {
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+.menu_btn span {
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  display: block;
+  overflow: hidden;
+  /* 選單文字隱藏 */
+}
+.menu_btn::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  left: 2px;
+  width: 36px;
+  background-color: #aaa;
+  /* 垂直置中 */
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  /* 垂直置中 */
+  box-shadow: 0 8px 0 #aaa, 0 -8px 0 #aaa;
+  /* 製作另外兩根 */
+}
+nav {
+  width: 40%;
+  height: calc(100vh- 50px);
+  /* 視口高度減掉灰色部分 */
+  background-color: transparent;
+  position: absolute;
+  top: 50px;
+  right: -100%;
+  /* 消失到視窗外 */
+  /* transition: 0.5s; */
+}
+nav a {
+  display: block;
+  opacity: 0.5;
+  color: white;
+  /* 橫排 */
+  text-decoration: none;
+  padding: 0px 20px;
+}
+#menu_control:checked ~ header nav {
+  right: 0;
+  /* 打勾出現 */
+}
+/* 選取到nav */
+@media screen and (min-width: 768px) {
+  .menu_btn {
+    display: none;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: right;
+    width: auto;
+    background-color: black;
+  }
+  nav a {
+    color: white;
+    opacity: 1;
+  }
+}

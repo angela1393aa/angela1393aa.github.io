@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>我的經歷</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      img {
+        vertical-align: bottom;
+        /* 圖片不要對齊基線 */
+      }
+      .wrap {
+        width: 100%;
+        max-width: 1400px;
+      }
+      .amos {
+        width: 100%;
+        height: 300px;
+        background-color: palegreen;
+      }
+      @media screen and (min-width: 768px) {
+        .amos {
+          background-color: orange;
+        }
+      }
+      @media screen and (min-width: 1200px) {
+        .amos {
+          background-color: orangered;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <input type="checkbox" name="" id="menu_control" />
+    <header>
+      <label for="menu_control" class="menu_btn" id="menu">
+        <span>選單</span>
+      </label>
+      <nav>
+        <a href="index.html">關於Angela</a>
+        <a href="p02.html">我的技能</a>
+        <a href="p03.html">學習筆記</a>
+        <a href="p04.html">我的作品</a>
+        <a href="p05.html">我的經歷</a>
+      </nav>
+    </header>
+    <main>
+      <div class="amos">RWD偵測視口大小做顏色變化</div>
+      <div class="title">
+        <h1>我的經歷</h1>
+        <p>不要任由時間帶著你去過生活，規畫自己的時間，盡量照計劃去過生活。</p>
+      </div>
+
+      <div class="container">
+        <h2 class="Q1">2015/9-2016/1社團</h2>
+        <p class="A1">
+          我畢業於金門大學食品科學系，在大學期間有擔任過咖啡社活動長及社區大學手沖咖啡助教，我
+          知道學咖啡是很燒錢的事，如果能有練習或學習的機會我都會去嘗試。
+        </p>
+        <h2 class="Q2">2016/1 and 2016/7實習</h2>
+        <p class="A2">
+          另外我有去葡萄王實習過，了解到真菌的培養的過程，就像養自己的孩子一樣，要經過不斷的實
+          驗換方子，想辦法讓真菌長的頭好壯壯且有效成分增加，我覺得是很有趣的事情。
+          那裡的環境是我所喜歡的，公司會願意讓員工去外面培訓再回來授課給其他員工聽，也時常請講
+          師來教受新的領域，是一間互相學習不斷成長的好公司希望未來的工作環境也是這樣的
+        </p>
+        <h2 class="Q3">2018/07 - 2021/4工作</h2>
+        <p class="A3">
+          我在欣興電子擔任 IPQC
+          的這幾年領悟到了在工作上團隊合作，分工非常重要，就像廚房做食物
+          的遊戲一樣，一定有一個是比較急的，你要馬上知道甚麼事情要先做，甚麼事情可以晚一點做，
+          可以請同事幫忙先做甚麼事，這樣才能讓工作比較快且順利的完成
+        </p>
+        <h2 class="Q4">2021/5-2021/10資策會</h2>
+        <p class="A4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+          aspernatur in necessitatibus dolorum id deleniti sit eligendi porro
+          reprehenderit aperiam a aut optio expedita vero assumenda dicta,
+          dignissimos dolorem magni?
+        </p>
+      </div>
+    </main>
+    <footer>Copyright © 2021 ANGELA BLOG</footer>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $("#menu").on("click", function () {
+        $("nav").toggle();
+      });
+      $(".Q1").on("click", function () {
+        $(".A1").slideToggle();
+      });
+      $(".Q2").on("click", function () {
+        $(".A2").slideToggle();
+      });
+      $(".Q3").on("click", function () {
+        $(".A3").slideToggle();
+      });
+      $(".Q4").on("click", function () {
+        $(".A4").slideToggle();
+      });
+    </script>
+  </body>
+</html>

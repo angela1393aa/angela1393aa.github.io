@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>手機轉桌機rwd漢堡選單</title>
+    <!-- <link rel="stylesheet" href="reset.css" /> -->
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      img {
+        vertical-align: bottom;
+        /* 圖片對齊是對齊基線所以會有白白的 */
+      }
+      #menu_control {
+        position: absolute;
+        /* 讓它消失 */
+        /* z-index: 1; */
+        /* 出現 */
+      }
+
+      header {
+        height: 41.6px;
+        background-color: #ccc;
+        position: relative;
+      }
+      .logo {
+        width: 60px;
+        height: 40px;
+        vertical-align: middle;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+      .menu_btn {
+        width: 40px;
+        height: 40px;
+        background-color: #000;
+        display: block;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+      }
+      .menu_btn span {
+        opacity: 0;
+        width: 1px;
+        height: 1px;
+        display: block;
+        overflow: hidden;
+        /* 選單文字隱藏 */
+      }
+      .menu_btn::before {
+        content: "";
+        position: absolute;
+        height: 2px;
+        left: 2px;
+        width: 36px;
+        background-color: #aaa;
+        /* 垂直置中 */
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        /* 垂直置中 */
+        box-shadow: 0 8px 0 #aaa, 0 -8px 0 #aaa;
+        /* 製作另外兩根 */
+      }
+      nav {
+        width: 30%;
+        height: calc(100vh- 50px);
+        /* 視口高度減掉灰色部分 */
+        background-color: rgba(170, 170, 170, 0.834);
+        position: absolute;
+        top: 50px;
+        right: -100%;
+        /* 到視窗外 */
+        /* transition: 0.5s; */
+      }
+      nav a {
+        display: block;
+        /* 橫排 */
+        text-decoration: none;
+        color: black;
+        padding: 10px 20px;
+      }
+      #menu_control:checked ~ header nav {
+        right: 0;
+      }
+      /* 選取到nav */
+      @media screen and (min-width: 768px) {
+        .menu_btn {
+          display: none;
+        }
+        .header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        nav {
+          position: relative;
+          top: -41.6px;
+          left: 0;
+          display: flex;
+          justify-content: right;
+          width: auto;
+          background-color: transparent;
+        }
+      }
+      /*  */
+      .item .pic {
+        width: 100%;
+        padding: 10px;
+      }
+      .title {
+        text-align: center;
+        font-size: 46px;
+        padding: 10px;
+        background-color: #aaa;
+      }
+      .text {
+        padding: 10px;
+      }
+      .smelltitle {
+        text-align: center;
+        font-size: 22px;
+      }
+      .banner img {
+        width: 100%;
+      }
+      @media screen and (min-width: 768px) {
+        .item-group {
+          display: flex;
+        }
+        .product .wrap {
+          display: flex;
+          width: 960px;
+          margin: auto;
+        }
+        .product .wrap .item {
+          width: 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <input type="checkbox" name="" id="menu_control" />
+    <header>
+      <a href="#">
+        <img class="logo" src="https://picsum.photos/id/15/80/40" />
+      </a>
+      <label for="menu_control" class="menu_btn">
+        <span>選單</span>
+      </label>
+      <nav>
+        <a href="#">關於我們</a>
+        <a href="#">產品介紹</a>
+        <a href="#">相關服務</a>
+        <a href="#">聯絡我們</a>
+        <a href="#">網站地圖</a>
+      </nav>
+    </header>
+    <div class="banner">
+      <img src="https://picsum.photos/id/11/1400/500" alt="" />
+    </div>
+    <!-- <div class="path">
+      <li><a href="#">首頁</a></li>
+      <li><a href="#">最新消息</a></li>
+      <li><a href="#"></a></li>
+    </div>  -->
+    <main>
+      <!-- about -->
+      <h1>手機轉桌機rwd漢堡選單</h1>
+      <section class="about">
+        <h2 class="title">about</h2>
+        <p class="smelltitle">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam
+          sunt cum et quisquam reprehenderit! Magnam quos reprehenderit
+          laboriosam ducimus quaerat qui? Amet corrupti mollitia nihil id
+          eligendi asperiores illo. Autem!
+        </p>
+        <div class="wrap">
+          <div class="item-group">
+            <div class="item">
+              <img
+                class="pic"
+                src="https://picsum.photos/id/12/300/200"
+                alt=""
+              />
+              <p class="text">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Laboriosam sunt cum et quisquam reprehenderit! Magnam quos
+                reprehenderit laboriosam ducimus quaerat qui? Amet corrupti
+                mollitia nihil id eligendi asperiores illo. Autem!
+              </p>
+            </div>
+            <div class="item">
+              <img
+                class="pic"
+                src="https://picsum.photos/id/13/300/200"
+                alt=""
+              />
+              <p class="text">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Laboriosam sunt cum et quisquam reprehenderit! Magnam quos
+                reprehenderit laboriosam ducimus quaerat qui? Amet corrupti
+                mollitia nihil id eligendi asperiores illo. Autem!
+              </p>
+            </div>
+            <div class="item">
+              <img
+                class="pic"
+                src="https://picsum.photos/id/14/300/200"
+                alt=""
+              />
+              <p class="text">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Laboriosam sunt cum et quisquam reprehenderit! Magnam quos
+                reprehenderit laboriosam ducimus quaerat qui? Amet corrupti
+                mollitia nihil id eligendi asperiores illo. Autem!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- product -->
+
+      <section class="product">
+        <h2 class="title">product</h2>
+        <p class="smelltitle">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam
+          sunt cum et quisquam reprehenderit! Magnam quos reprehenderit
+          laboriosam ducimus quaerat qui? Amet corrupti mollitia nihil id
+          eligendi asperiores illo. Autem!
+        </p>
+        <div class="wrap">
+          <div class="item">
+            <img class="pic" src="https://picsum.photos/id/15/600/400" alt="" />
+          </div>
+          <div class="item">
+            <h3>title</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Laboriosam sunt cum et quisquam reprehenderit! Magnam quos
+              reprehenderit laboriosam ducimus quaerat qui? Amet corrupti
+              mollitia nihil id eligendi asperiores illo. Autem!
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- service -->
+      <section class="service">
+        <h2 class="title">service</h2>
+        <p class="smelltitle">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam
+          sunt cum et quisquam reprehenderit! Magnam quos reprehenderit
+          laboriosam ducimus quaerat qui? Amet corrupti mollitia nihil id
+          eligendi asperiores illo. Autem!
+        </p>
+        <div class="wrap">
+          <div class="item-group">
+            <div class="item">
+              <img
+                class="pic"
+                src="https://picsum.photos/id/16/600/400"
+                alt=""
+              />
+              <p class="text">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Laboriosam sunt cum et quisquam reprehenderit! Magnam quos
+                reprehenderit laboriosam ducimus quaerat qui? Amet corrupti
+                mollitia nihil id eligendi asperiores illo. Autem!
+              </p>
+            </div>
+            <div class="item">
+              <img
+                class="pic"
+                src="https://picsum.photos/id/17/600/400"
+                alt=""
+              />
+              <p class="text">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Laboriosam sunt cum et quisquam reprehenderit! Magnam quos
+                reprehenderit laboriosam ducimus quaerat qui? Amet corrupti
+                mollitia nihil id eligendi asperiores illo. Autem!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>&copy;copyright 2021 by angela</footer>
+  </body>
+</html>
