@@ -32,6 +32,13 @@
       .container p {
         display: none;
       }
+      h2{
+        margin: 10px 0;
+      }
+      span{
+        font-size: 14px;
+        color: #aaa;
+      }
       @media screen and (min-width: 768px) {
         .amos {
           background-color: orange;
@@ -52,10 +59,10 @@
       </label>
       <nav>
         <a href="index.html">關於Angela</a>
+        <a href="p05.html">我的經歷</a>
         <a href="p02.html">我的技能</a>
         <a href="p03.html">學習筆記</a>
         <a href="p04.html">我的作品</a>
-        <a href="p05.html">我的經歷</a>
       </nav>
     </header>
     <main>
@@ -63,43 +70,47 @@
       <div class="title">
         <h1>我的經歷</h1>
         <p>
-          那些能在自己領域獲得成就的人，並不是因為他們成為什麼令人崇拜的人，而是他們成為自己想要的人。
+          如果人生沒有閱歷，就如一張白紙。
         </p>
       </div>
 
       <div class="container">
+        <h2 class="Q-1">
+          我的第一個網頁<i class="far fa-hand-point-up"></i>
+        </h2>
+        <p class="A-1">
+          在無名很火紅的時候，首次接觸到 HTML、CSS 來美化自己的部落格，因此產生了興趣。 </br>
+          小五小六時正式接觸到 HTML、CSS、Flash、 PhotoImpact 等課程，也有參加過鄉、縣、全台 小學生的網頁比賽。
+        </p>
         <h2 class="Q0">
-          在很久很久以前我的第一個網頁<i class="far fa-hand-point-up"></i>
+          大學:金門大學食品科學系<span>2014/9-2018/6</span><i class="far fa-hand-point-up"></i>
         </h2>
         <p class="A0">
-          在無名很火紅時首次接觸到 HTML、CSS 來美化自己的部落格，那時我會去看別人的程式碼來 研究變成自己的東西，因此產生了興趣。 小五小六時正式接觸到 HTML、CSS、Flash、 PhotoImpact 等課程，也有參加過鄉、縣、全台 小學生的網頁比賽。
+          那時食安危機嚴重加上自己對營養學滿有興趣的，因此選擇了食品科學系。
         </p>
         <h2 class="Q1">
-          社團:咖啡社2015/9-2016/1<i class="far fa-hand-point-up"></i>
+          社團:咖啡社<span>2015/9-2016/1</span><i class="far fa-hand-point-up"></i>
         </h2>
         <p class="A1">
-          因為想學拉花的技巧因此參加了咖啡社，展開了精品咖啡的探險旅程，為了能學到更多在大學期間有擔任過咖啡社活動長及社區大學手沖咖啡助教，如果有練習或學習的機會我都願意嘗試。
+          因為想學拉花的技巧因此參加了咖啡社，展開了精品咖啡的探險旅程，為了能學到更多，在大學期間有擔任過金門大學咖啡社活動長及社區大學手沖咖啡助教，如果有練習或學習的機會我都願意嘗試。
         </p>
         <h2 class="Q2">
-          實習:葡萄王2016/1 and 2016/7<i class="far fa-hand-point-up"></i>
+          實習:葡萄王<span>2016/1 and 2016/7</span><i class="far fa-hand-point-up"></i>
         </h2>
         <p class="A2">
-          那裡的環境是我所喜歡的，公司會願意讓員工去外面培訓再回來授課給其他員工聽，也時常請講
-          師來教受新的領域知識，是一間互相學習不斷成長的好公司。
-          我覺得塑造一個讓團隊互相扶持成長的環境，才能從本質上強化組員的實力及團隊合作的情感。
+          主要是學一些儀器的使用，做實驗、分析數據、品質檢驗，公司會願意讓員工去外面培訓再回來分享給其他人聽，也時常請講師來教受新的領域知識，是一間互相學習不斷成長的好公司。
         </p>
         <h2 class="Q3">
-          工作:欣興電子2018/07 - 2021/4<i class="far fa-hand-point-up"></i>
+          工作:欣興電子<span>2018/07 - 2021/4</span><i class="far fa-hand-point-up"></i>
         </h2>
         <p class="A3">
-          我在欣興電子擔任 IPQC
-          的職位，負責管理品質，檢查產品有沒有異常，沒有異常才能大量生產。
+          我在欣興電子擔任 IPQC的職位，負責管理品質，檢查產品有沒有異常，沒有異常才能大量生產。
         </p>
         <h2 class="Q4">
-          培訓:資策會2021/5-2021/10<i class="far fa-hand-point-up"></i>
+          培訓:資策會<span>2021/5-2021/10</span><i class="far fa-hand-point-up"></i>
         </h2>
         <p class="A4">
-          因為參加了資策會的培訓正是窺探了網頁的世界，在過去的開發經驗上製作過</br>
+          因為參加了資策會的培訓正是窺探了網頁的世界，在過去的開發經驗上製作過 :</br>
           <i class="fas fa-angle-double-right"></i>純css製作rwd版面</br>
           <i class="fas fa-angle-double-right"></i>Bootstrap切版</br>
           <i class="fas fa-angle-double-right"></i>JQuery製作首頁動圖切換</br>
@@ -117,6 +128,9 @@
     <script>
       $("#menu").on("click", function () {
         $("nav").toggle();
+      });
+      $(".Q-1").on("click", function () {
+        $(".A-1").slideToggle();
       });
       $(".Q0").on("click", function () {
         $(".A0").slideToggle();
