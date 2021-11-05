@@ -7,6 +7,9 @@
     <title>我的經歷</title>
     <link rel="stylesheet" href="style.css" />
     <style>
+      .container {
+        padding: 20px;
+      }
       img {
         vertical-align: bottom;
         /* 圖片不要對齊基線 */
@@ -47,38 +50,47 @@
       </nav>
     </header>
     <main>
-      <div class="amos">RWD偵測視口大小做顏色變化</div>
+      <!-- <div class="amos">RWD偵測視口大小做背景變化</div> -->
       <div class="title">
         <h1>我的經歷</h1>
         <p>不要任由時間帶著你去過生活，規畫自己的時間，盡量照計劃去過生活。</p>
       </div>
 
       <div class="container">
-        <h2 class="Q1">2015/9-2016/1社團</h2>
+        <h2 class="Q0">在很久很久以前我的第一個網頁</h2>
+        <p class="A0">
+          在無名很火紅時首次接觸到 HTML、CSS
+          來美化自己的部落格，那時我會去看別人的程式碼來
+          研究變成自己的東西，因此產生了興趣。 小五小六時正式接觸到
+          HTML、CSS、Flash、 PhotoImpact 等課程，也有參加過鄉、縣、全台
+          小學生的網頁比賽。
+        </p>
+        <h2 class="Q1">2015/9-2016/1社團:咖啡社</h2>
         <p class="A1">
-          我畢業於金門大學食品科學系，在大學期間有擔任過咖啡社活動長及社區大學手沖咖啡助教，我
-          知道學咖啡是很燒錢的事，如果能有練習或學習的機會我都會去嘗試。
+          因為想學拉花的技巧因此參加了咖啡社，展開了精品咖啡的探險旅程，為了能學到更多在大學期間有擔任過咖啡社活動長及社區大學手沖咖啡助教，如果有練習或學習的機會我都願意嘗試。
         </p>
-        <h2 class="Q2">2016/1 and 2016/7實習</h2>
+        <h2 class="Q2">2016/1 and 2016/7實習:葡萄王</h2>
         <p class="A2">
-          另外我有去葡萄王實習過，了解到真菌的培養的過程，就像養自己的孩子一樣，要經過不斷的實
-          驗換方子，想辦法讓真菌長的頭好壯壯且有效成分增加，我覺得是很有趣的事情。
           那裡的環境是我所喜歡的，公司會願意讓員工去外面培訓再回來授課給其他員工聽，也時常請講
-          師來教受新的領域，是一間互相學習不斷成長的好公司希望未來的工作環境也是這樣的
+          師來教受新的領域知識，是一間互相學習不斷成長的好公司。
+          我覺得塑造一個讓團隊互相扶持成長的環境，才能從本質上強化組員的實力及團隊合作的情感。
         </p>
-        <h2 class="Q3">2018/07 - 2021/4工作</h2>
+        <h2 class="Q3">2018/07 - 2021/4工作:欣興電子</h2>
         <p class="A3">
           我在欣興電子擔任 IPQC
-          的這幾年領悟到了在工作上團隊合作，分工非常重要，就像廚房做食物
-          的遊戲一樣，一定有一個是比較急的，你要馬上知道甚麼事情要先做，甚麼事情可以晚一點做，
-          可以請同事幫忙先做甚麼事，這樣才能讓工作比較快且順利的完成
+          的職位，負責管理品質，檢查產品有沒有異常，沒有異常才能大量生產。
         </p>
         <h2 class="Q4">2021/5-2021/10資策會</h2>
         <p class="A4">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
-          aspernatur in necessitatibus dolorum id deleniti sit eligendi porro
-          reprehenderit aperiam a aut optio expedita vero assumenda dicta,
-          dignissimos dolorem magni?
+          因為參加了資策會的培訓正是窺探了網頁的世界，在過去的開發經驗上製作過
+          <li>純css製作rwd版面</li>
+          <li>Bootstrap切版</li>
+          <li>JQuery製作首頁動圖切換</li>
+          <li>使用了php 和 MySQL做出後台的管理功能CRUD</li>
+          <li>
+            使用React.js開發透過axios來串接api，後端使用 Node.js 搭配 Express
+            做出 restful api
+          </li>
         </p>
       </div>
     </main>
@@ -91,6 +103,9 @@
     <script>
       $("#menu").on("click", function () {
         $("nav").toggle();
+      });
+      $(".Q0").on("click", function () {
+        $(".A0").slideToggle();
       });
       $(".Q1").on("click", function () {
         $(".A1").slideToggle();
