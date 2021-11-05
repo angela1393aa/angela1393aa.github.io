@@ -154,6 +154,7 @@ nav {
   right: -100%;
   /* 消失到視窗外 */
   /* transition: 0.5s; */
+  display: none;
 }
 nav a {
   display: block;
