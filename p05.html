@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>我的經歷</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- anonymous -->
     <link
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
+    <!-- aos.css -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <style>
       .container {
         padding: 20px;
@@ -34,6 +38,9 @@
       }
       h2{
         margin: 10px 0;
+      }
+      h2:hover{
+        color: #fa0;
       }
       span{
         font-size: 14px;
@@ -71,8 +78,8 @@
     <main>
       <!-- <div class="amos">RWD偵測視口大小做背景變化</div> -->
       <div class="title">
-        <h1>我的經歷</h1>
-        <p>
+        <h1 data-aos="fade-up" data-aos-anchor-placement="center-bottom">我的經歷</h1>
+        <p data-aos="fade-up" data-aos-duration="2000">
           如果人生沒有閱歷，就如一張白紙。
         </p>
       </div>
@@ -128,12 +135,17 @@
       </div>
     </main>
     <footer>Copyright © 2021 ANGELA BLOG</footer>
+    <!-- jquery-3.3.1.min.js -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"
     ></script>
+    <!-- aos.js -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+      // aos
+      AOS.init();
       $("#menu").on("click", function () {
         $("nav").toggle();
       });

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>學習筆記</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- aos.css -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <style>
       
       @media screen and (max-width: 768px) {
@@ -67,8 +69,8 @@
     </header>
     <main>
       <div class="title">
-        <h1>學習筆記</h1>
-        <p>不要任由時間帶著你去過生活，規畫自己的時間，盡量照計劃去過生活。</p>
+        <h1 data-aos="fade-up" data-aos-anchor-placement="center-bottom">學習筆記</h1>
+        <p data-aos="fade-up" data-aos-duration="2000">不要任由時間帶著你去過生活，規畫自己的時間，盡量照計劃去過生活。</p>
       </div>
       <div class="wrap">
         <div class="item">
@@ -124,12 +126,17 @@
     </main>
 
     <footer>Copyright © 2021 ANGELA BLOG</footer>
+    <!-- jquery-3.3.1.min.js -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"
     ></script>
+    <!-- aos.js -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+      // aos
+      AOS.init();
       $("#menu").on("click", function () {
         $("nav").toggle();
       });

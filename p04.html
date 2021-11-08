@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>我的作品</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- fontawesome -->
     <link
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
+    <!-- aos.css -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <style>
       .bg {
         background-image: url(./images/blog-bg.jpg);
@@ -58,8 +62,12 @@
 
     <main>
       <div class="title">
-        <h1>我的作品</h1>
-        <p>努力付出後的果實總是格外甜美。</p>
+        <h1 data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+          我的作品
+        </h1>
+        <p data-aos="fade-up" data-aos-duration="2000">
+          努力付出後的果實總是格外甜美。
+        </p>
       </div>
       <div class="wrap">
         <div class="item">
@@ -108,7 +116,7 @@
         </div>
       </div>
       <div class="wrap bg">
-        <div class="item">
+        <div class="item" data-aos="fade-up" data-aos-duration="1000">
           <div class="tab">Hot</div>
           <img src="./images/Bootstrap.png" alt="" />
           <h2>Bootstrap切版練習</h2>
@@ -120,7 +128,12 @@
           <i class="fab fa-github"></i>
           <a href="https://github.com/angela1393aa/Bootstrap">GitHub</a>
         </div>
-        <div class="item">
+        <div
+          class="item"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="500"
+        >
           <div class="tab">Hot</div>
           <img src="./images/css.png" alt="css" />
           <h2>純css製作rwd版面</h2>
@@ -132,7 +145,12 @@
           <i class="fab fa-github"></i>
           <a href="https://github.com/angela1393aa/css">GitHub</a>
         </div>
-        <div class="item">
+        <div
+          class="item"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="1000"
+        >
           <div class="tab">Hot</div>
           <img src="./images/header.png" alt="header" />
           <h2>JQuery製作首頁動圖切換</h2>
@@ -146,7 +164,7 @@
         </div>
       </div>
       <div class="wrap">
-        <div class="item">
+        <div class="item" data-aos="zoom-in-up" data-aos-delay="1500">
           <div class="tab">Hot</div>
           <img src="https://picsum.photos/id/12/300/200" alt="" />
           <h2>手機轉桌機rwd</h2>
@@ -154,7 +172,7 @@
           <i class="fas fa-door-open"></i>
           <a href="p06.html">手機轉桌機rwd</a>
         </div>
-        <div class="item">
+        <div class="item" data-aos="zoom-in-up" data-aos-delay="2000">
           <div class="tab">Hot</div>
           <img src="https://picsum.photos/id/14/300/200" alt="" />
           <h2>稀飯板</h2>
@@ -162,7 +180,7 @@
           <i class="fas fa-door-open"></i>
           <a href="p07.html">稀飯板(網頁板)</a>
         </div>
-        <div class="item">
+        <div class="item" data-aos="zoom-in-up" data-aos-delay="2500">
           <div class="tab">Hot</div>
           <img src="https://picsum.photos/id/13/300/200" alt="" />
           <h2>Bootstrap</h2>
@@ -170,7 +188,7 @@
           <i class="fas fa-door-open"></i>
           <a href="p08.html">Bootstrap</a>
         </div>
-        <div class="item">
+        <div class="item" data-aos="zoom-in-up" data-aos-delay="3000">
           <div class="tab">Hot</div>
           <img src="https://picsum.photos/id/13/300/200" alt="" />
           <h2>Bootstrap 組件</h2>
@@ -181,12 +199,18 @@
       </div>
     </main>
     <footer>Copyright © 2021 ANGELA BLOG</footer>
+    <!-- jquery-3.3.1.min.js -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"
     ></script>
+    <!-- aos.js -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+      // aos
+      AOS.init();
+      // 漢堡選單
       $("#menu").on("click", function () {
         $("nav").toggle();
       });

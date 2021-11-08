@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>我的技能</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- anonymous -->
     <link
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
+    <!-- aos.css -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <style>
       /* 輪播圖 */
       .wrap {
@@ -225,8 +228,10 @@
 
     <main>
       <div class="title">
-        <h1>我的技能</h1>
-        <p>
+        <h1 data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+          我的技能
+        </h1>
+        <p data-aos="fade-up" data-aos-duration="2000">
           安於現狀就像穿著一雙破洞的鞋，不到狂風暴雨之日，你都意識不到自己裝備不足。
         </p>
       </div>
@@ -337,12 +342,17 @@
       </section>
     </main>
     <footer>Copyright © 2021 ANGELA BLOG</footer>
+    <!-- jquery-3.3.1.min.js -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"
     ></script>
+    <!-- aos.js -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+      // aos
+      AOS.init();
       $("#menu").on("click", function () {
         $("nav").toggle();
       });

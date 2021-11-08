@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>關於Angela</title>
+    <!-- favicon.ico -->
     <link rel="icon" href="./favicon.ico" />
-    <!-- <link rel="stylesheet" href="reset.css" /> -->
+    <!-- aos.css -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
     <style>
       .about-img {
@@ -58,7 +60,7 @@
       <label for="menu_control" class="menu_btn" id="menu">
         <span>選單</span>
       </label>
-      <a href="#">
+      <a href="/">
         <img class="logo" src="./images/logo.png" alt="logo" />
       </a>
       <nav>
@@ -71,8 +73,12 @@
     </header>
     <main>
       <div class="title">
-        <h1>關於Angela</h1>
-        <p>⼀名熱愛學習，喜愛效率，對程式充滿熱情， 友善交流的⼯程師。</p>
+        <h1 data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+          關於Angela
+        </h1>
+        <p data-aos="fade-up" data-aos-duration="2000">
+          ⼀名熱愛學習，喜愛效率，對程式充滿熱情， 友善交流的⼯程師。
+        </p>
       </div>
       <img class="about-img" src="./images/about-img.png" alt="" />
 
@@ -96,13 +102,17 @@
       </div>
     </main>
     <footer>Copyright © 2021 ANGELA BLOG</footer>
-
+    <!-- jquery-3.3.1.min.js -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"
     ></script>
+    <!-- aos.js -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+      // aos
+      AOS.init();
       // 彈跳視窗
       $(".btn-close").on("click", function () {
         $(".fix").fadeOut();
