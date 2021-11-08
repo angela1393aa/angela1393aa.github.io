@@ -17,6 +17,35 @@
           margin: 10px 0;
         }
       }
+      .item {
+        position: relative;
+      }
+      .item img {
+        width: 100%;
+        vertical-align: middle;
+        /* 圖片在垂直對齊時下面會出現一個空間 */
+      }
+      .item .txt {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        /* 文字置中 */
+        opacity: 0;
+        /* 文字透明 */
+        transition: opacity 0.5s;
+      }
+      .item:hover .txt {
+        opacity: 1;
+        font-size: 42px;
+      }
     </style>
   </head>
   <body>
@@ -40,42 +69,54 @@
       </div>
       <div class="wrap">
         <div class="item">
-          <h2>CSS</h2>
-          <p>
-            <a href="https://hackmd.io/@angela1393aa?tags=%5B%22css%22%5D"><img src="./images/前/9.png" alt="css"></a>
-          </p>
+        <img src="./images/前/9.png" alt="css"></a>
+        <a href="https://hackmd.io/@angela1393aa?tags=%5B%22css%22%5D">
+          <div class="txt">
+            <h2>CSS</h2>
+          </div>
+        </a>
         </div>
         <div class="item">
-          <h2>JavaScript</h2>
-          <p>
-            <a href="https://hackmd.io/@angela1393aa?tags=%5B%22javascript%22%5D"><img src="./images/前/2.png" alt="JavaScript"></a>
-          </p>
+        <img src="./images/前/2.png" alt="JavaScript">
+        <a href="https://hackmd.io/@angela1393aa?tags=%5B%22javascript%22%5D">
+          <div class="txt">
+            <h2>JavaScript</h2>
+          </div>
+        </a>
         </div>
         <div class="item">
-          <h2>React.Js</h2>
-          <p>
-            <a href="https://hackmd.io/@angela1393aa?tags=%5B%22react%22%5D"><img src="./images/前/8.png" alt="React.Js"></a>
-          </p>
+          <img src="./images/前/8.png" alt="React.Js">
+          <a href="https://hackmd.io/@angela1393aa?tags=%5B%22react%22%5D">
+          <div class="txt">
+            <h2>React.Js</h2>
+          </div>
+        </a>
         </div>
       </div>
       <div class="wrap">
         <div class="item">
-          <h2>Node.Js</h2>
-          <p>
-            <a href="https://hackmd.io/@angela1393aa?tags=%5B%22NodeJS%22%5D"><img src="./images/後/1.png" alt="Node.Js"></a>
-          </p>
+          <img src="./images/後/1.png" alt="Node.Js">
+          <a href="https://hackmd.io/@angela1393aa?tags=%5B%22NodeJS%22%5D">
+          <div class="txt">
+            <h2>Node.Js</h2>
+          </div>
+        </a>
         </div>
         <div class="item">
-          <h2>PHP</h2>
-          <p>
-            <a href="https://hackmd.io/@angela1393aa?tags=%5B%22PHP%22%5D"><img src="./images/後/4.png" alt="PHP"></a>
-          </p>
+          <img src="./images/後/4.png" alt="PHP">
+          <a href="https://hackmd.io/@angela1393aa?tags=%5B%22PHP%22%5D">
+          <div class="txt">
+            <h2>PHP</h2>
+          </div>
+        </a>
         </div>
         <div class="item">
-          <h2>Bootstrap</h2>
-          <p>
-            <a href="https://hackmd.io/@angela1393aa?tags=%5B%22Bootstrap%22%5D"><img src="./images/前/3.png" alt="Bootstrap"></a>
-          </p>
+          <img src="./images/前/3.png" alt="Bootstrap">
+          <a href="https://hackmd.io/@angela1393aa?tags=%5B%22Bootstrap%22%5D">
+          <div class="txt">
+            <h2>Bootstrap</h2>
+          </div>
+        </a>
         </div>
     </main>
 
