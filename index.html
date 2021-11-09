@@ -7,18 +7,35 @@
     <title>關於Angela</title>
     <!-- favicon.ico -->
     <link rel="icon" href="./favicon.ico" />
+    <!-- anonymous -->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
     <!-- aos.css -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style2.css" />
     <style>
+      /* 圖 */
       .about-img {
         width: 300px;
         height: 300px;
         margin-bottom: 30px;
       }
+      .cat {
+        width: 100%;
+        height: 100%;
+      }
+      /* main */
       main {
         text-align: center;
       }
+      p {
+        padding: 20px;
+      }
+      /* 彈跳視窗 */
       .fix-x {
         text-align: right;
         padding: 5px;
@@ -45,12 +62,15 @@
         z-index: 3;
         border: 2px solid black;
       }
-      .cat {
-        width: 100%;
-        height: 100%;
+      /* 個人資訊 */
+      .material {
+        display: flex;
+        justify-content: center;
       }
-      p {
-        padding: 20px;
+      .material a {
+        color: #fa0;
+        text-decoration: none;
+        margin: 10px 30px;
       }
     </style>
   </head>
@@ -86,7 +106,11 @@
         你好!我是Angela。剛在資策會學習完，前端跟後端的技術，平時上完課，會自己寫作，累積技術文章。我⾃⼰的side
         project在github，歡迎參考我的github。
       </p>
-
+      <div class="material">
+        <a href="https://github.com/angela1393aa"><i class="fab fa-github-square"></i>github</a>
+        <a href="https://hackmd.io/@angela1393aa"><i class="fas fa-file-signature"></i>hackmd</a>
+        <a href="https://www.cakeresume.com/angela1393aa"><i class="far fa-address-card"></i>我的履歷</a>
+      </div>
       <!-- 彈跳視窗 -->
       <div class="fix">
         <div class="fix-x">
@@ -101,7 +125,9 @@
         </div>
       </div>
     </main>
-    <footer>Copyright © 2021 ANGELA BLOG</footer>
+    <footer>
+      <div>Copyright © 2021 ANGELA BLOG</div>
+      </footer>
     <!-- jquery-3.3.1.min.js -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -110,16 +136,7 @@
     ></script>
     <!-- aos.js -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      // aos
-      AOS.init();
-      // 彈跳視窗
-      $(".btn-close").on("click", function () {
-        $(".fix").fadeOut();
-      });
-      $("#menu").on("click", function () {
-        $("nav").toggle();
-      });
+    <script src="jquery.js"></script>
     </script>
   </body>
 </html>

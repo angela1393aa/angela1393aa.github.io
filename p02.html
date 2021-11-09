@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>我的技能</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style2.css" />
     <!-- anonymous -->
     <link
       rel="stylesheet"
@@ -131,8 +131,7 @@
       .slides input[type="radio"]:nth-of-type(5):checked ~ .slide {
         transform: translatex(-400%);
       }
-      /* Left/Right Button Classes Below */
-
+      /* 左右按鈕 */
       .navigator {
         position: absolute;
         top: 50%;
@@ -350,31 +349,6 @@
     ></script>
     <!-- aos.js -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      // aos
-      AOS.init();
-      $("#menu").on("click", function () {
-        $("nav").toggle();
-      });
-      // 首頁輪播圖
-      var slide = 0;
-      var sliderWidth = 600;
-      var slideCount = 4; //取得陣列長度
-      //timer
-      var autoSlide = setInterval(slideTimer, 3000);
-
-      function slideTimer() {
-        slide = slide >= slideCount - 1 ? 0 : slide + 1;
-        goSlider(slide);
-      }
-      $(".slides").hover(
-        function () {
-          clearInterval(autoSlide);
-        },
-        function () {
-          autoSlide = setInterval(slideTimer, 3000);
-        }
-      );
-    </script>
+    <script src="jquery.js"></script>
   </body>
 </html>

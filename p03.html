@@ -5,20 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>學習筆記</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style2.css" />
     <!-- aos.css -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <style>
-      
-      @media screen and (max-width: 768px) {
-        .wrap {
-          display: block;
-          width: 100%;
-        }
-        .item {
-          margin: 10px 0;
-        }
-      }
       .item {
         position: relative;
       }
@@ -48,6 +38,16 @@
         opacity: 1;
         font-size: 42px;
       }
+      @media screen and (max-width: 768px) {
+        .wrap {
+          display: block;
+          width: 100%;
+        }
+        .item {
+          margin: 10px 0;
+        }
+      }
+      
     </style>
   </head>
   <body>
@@ -128,18 +128,12 @@
     <footer>Copyright © 2021 ANGELA BLOG</footer>
     <!-- jquery-3.3.1.min.js -->
     <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"
     ></script>
     <!-- aos.js -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      // aos
-      AOS.init();
-      $("#menu").on("click", function () {
-        $("nav").toggle();
-      });
-    </script>
+    <script src="jquery.js"></script>
   </body>
 </html>
