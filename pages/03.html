@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>播音寶</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        box-sizing: border-box;
+        font-family: "Noto Sans TC", "Microsoft JhengHei", PingFang, STHeiti,
+          sans-serif, serif;
+      }
+      .container {
+        width: 1200px;
+        height: 700px;
+        border: 1px solid #000;
+        background: url(../images/—Pngtree—roadside\ snacks\ \ stall\ hot_39264711.png)
+          center center / cover;
+        position: relative;
+      }
+      .girl {
+        position: absolute;
+        bottom: 2rem;
+        right: -3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shopping">
+      <div class="container">
+        <img class="girl" src="../images/--unscreen.gif" alt="girl" />
+      </div>
+    </div>
+    <script>
+      let girl = document.querySelector(".girl");
+      theClockX = 0;
+      arr = true;
+      setInterval(drawHouse2, 1000);
+      function drawHouse2() {
+        if (arr === true) {
+          theClockX++;
+          clientX = theClockX % 40;
+          girl.style.right = clientX + "rem";
+        }
+      }
+    </script>
+  </body>
+</html>

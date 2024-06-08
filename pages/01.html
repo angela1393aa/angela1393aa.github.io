@@ -1,0 +1,174 @@
+<!-- https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/687468/ -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <meta charset="utf-8" />
+    <title>skill</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        box-sizing: border-box;
+        font-family: "Noto Sans TC", "Microsoft JhengHei", PingFang, STHeiti,
+          sans-serif, serif;
+      }
+      /* 遮罩 */
+      .carousel {
+        width: 1000px;
+        height: 320px;
+        overflow: hidden;
+        position: relative;
+        top: 50%;
+        transform: translate(0%, 50%);
+        margin: auto;
+        /* background-color: antiquewhite; */
+      }
+      .slides {
+        display: flex;
+        transition: transform 0.5s;
+        /* 圖片切換在 0.5s 內完成，以免切換速度過快或者過慢，用戶不適 */
+        list-style: none;
+      }
+      .slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .slide h2 {
+        padding: 2rem;
+      }
+      .slide .skill {
+        width: 1000px;
+        display: flex;
+        justify-content: space-around;
+      }
+      .skill img {
+        width: 200px;
+        height: 200px;
+      }
+      .check {
+        background: #000;
+      }
+      .carousel-buttons {
+        position: absolute;
+        bottom: -4%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .carousel-buttons button {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        margin: 0 3px;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="carousel">
+      <ul class="slides" id="slides">
+        <li class="slide">
+          <h2>前端</h2>
+          <div class="skill">
+            <img src="../images/前/6.png" alt="html" />
+            <img src="../images/前/9.png" alt="css" />
+            <img src="../images/前/2.png" alt="JavaScript" />
+            <img src="../images/前/1.png" alt="sass" />
+          </div>
+        </li>
+        <li class="slide">
+          <h2>前端</h2>
+          <div class="skill">
+            <img src="../images/前/3.png" alt="Bootstrap" />
+            <img src="../images/前/4.png" alt="jQuery" />
+            <img src="../images/前/5.png" alt="TailwindCSS" />
+            <img src="../images/前/8.png" alt="React.Js" />
+          </div>
+        </li>
+        <li class="slide">
+          <h2>後端</h2>
+          <div class="skill">
+            <img src="../images/後/1.png" alt="Node.Js" />
+            <img src="../images/後/2.png" alt="Express.Js" />
+            <img src="../images/後/3.png" alt="MySQL" />
+            <img src="../images/後/4.png" alt="PHP" />
+          </div>
+        </li>
+        <li class="slide">
+          <h2>設計</h2>
+          <div class="skill">
+            <img src="../images/設計/1.png" alt="Figma" />
+            <img src="../images/設計/2.png" alt="Adobe  Illustrator" />
+            <img src="../images/設計/3.png" alt="Adobe  Photoshop" />
+            <img src="../images/設計/4.png" alt="Adobe XD" />
+          </div>
+        </li>
+        <li class="slide">
+          <h2>其他</h2>
+          <div class="skill">
+            <img src="../images/前/7.png" alt="axios" />
+            <img src="../images/其他/6.png" alt="github" />
+            <img src="../images/其他/2.png" alt="npm" />
+            <img src="../images/其他/1.png" alt="yarn" />
+          </div>
+        </li>
+      </ul>
+      <span class="carousel-buttons" id="carousel-buttons">
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+        <button></button>
+      </span>
+    </div>
+
+    <script>
+      //自動輪播(找到要切換的第 n 個 button ，s 秒後觸發第 n 個 button 的點擊事件（切換圖片完成），給所有的 button 加上 check 的屬性，給當前 button 的兄弟元素移除 check 屬性)
+      let allButtons = $("#carousel-buttons > button");
+      for (let i = 0; i < allButtons.length; i++) {
+        $(allButtons[i]).on("click", function (ev) {
+          let index = $(ev.currentTarget).index(); //ev.currentTarget 指向添加監聽事件的對象，.index( ) 獲取點擊 button 的索引
+          let npx = index * -1000; //移動的距離 npx 為索引 * 圖片寬度
+          $("#slides").css({
+            transform: "translateX(" + npx + "px)",
+          });
+          n = index;
+          allButtons
+            .eq(n)
+            .addClass("check")
+            .siblings(".check")
+            .removeClass("check");
+        });
+      }
+      let n = 0;
+      let size = allButtons.length;
+      let timerId = setInterval(() => {
+        n++;
+        allButtons
+          .eq(n % size)
+          .trigger("click")
+          .addClass("check")
+          .siblings(".check")
+          .removeClass("check");
+      }, 2000);
+      //鼠標進入圖片，清除計時器
+      $(".carousel").on("mouseenter", function () {
+        window.clearInterval(timerId);
+      });
+      //鼠標移出，恢復計時。
+      $(".carousel").on("mouseleave", function () {
+        timerId = setInterval(() => {
+          n++;
+          allButtons
+            .eq(n % size)
+            .trigger("click")
+            .addClass("check")
+            .siblings(".check")
+            .removeClass("check");
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>
