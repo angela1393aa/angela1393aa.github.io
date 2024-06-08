@@ -4,10 +4,6 @@ AOS.init();
 $("#menu").on("click", function () {
   $("nav").toggle();
 });
-// 彈跳視窗
-$(".btn-close").on("click", function () {
-  $(".fix").fadeOut();
-});
 // QA開關
 $(".Q-1").on("click", function () {
   $(".A-1").slideToggle();
@@ -26,6 +22,9 @@ $(".Q3").on("click", function () {
 });
 $(".Q4").on("click", function () {
   $(".A4").slideToggle();
+});
+$(".Q5").on("click", function () {
+  $(".A5").slideToggle();
 });
 // 首頁輪播圖
 var slide = 0;
